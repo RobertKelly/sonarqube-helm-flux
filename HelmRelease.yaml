@@ -1,0 +1,13 @@
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: sonarqube
+  namespace: default
+spec:
+  releaseName: sonarqube
+  chart:
+    git: git@github.com:RobertKelly/sonarqube-helm-flux.git
+    ref: master
+    path: .
+  values:
+    replicaCount: 1
